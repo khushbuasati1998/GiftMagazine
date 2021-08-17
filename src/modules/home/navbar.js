@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -11,22 +11,16 @@ import Grid from '@material-ui/core/Grid';
 import colors from '../../common/colors';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import Badge from '@material-ui/core/Badge';
-import Tooltip from '@material-ui/core/Tooltip';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import Avatar from '@material-ui/core/Avatar';
 import MoreIcon from '@material-ui/icons/MoreVert';
 
-const NAVBAR_HEADING_TABS = ['HOME', 'PRODUCTS', 'WHY US', 'CONTACT US', 'LOGIN', 'SIGN UP'];
+const NAVBAR_HEADING_TABS = ['HOME', 'PRODUCTS', 'WHY US', 'LOGIN', 'SIGN UP'];
 
 const NavbarMenu = (props) => {
 
     // css class states
     const classes = useStyles();
+    // component props
+    const { resendTabIndex } = props;
     // component states start here
     const [
         mobileMoreAnchorEl,
@@ -35,6 +29,10 @@ const NavbarMenu = (props) => {
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
     const [tabValue, setTabValue] = useState(0);
     // component states ends here
+
+    useEffect(() => {
+        resendTabIndex(tabValue);
+    }, [tabValue]);
 
     /**
      * handle change for tabs
@@ -101,11 +99,9 @@ const NavbarMenu = (props) => {
                         justifyContent="space-between"
                         alignItems="center"
                     >
-                        <Grid item={true} xs={1}>
-                            {/* <img src={require('../../assets/Image 1.png')} /> */}
-                        </Grid>
+                        <Grid item={true} xs={1}/>
                         <Grid item={true} xs={1} className={classes.projectNameText}>
-                            Giftos
+                            GiftMagazine
                         </Grid>
                         <Grid item={true} xs={10} className={classes.headingTabsContainer}>
                             <div className={classes.sectionDesktop}>

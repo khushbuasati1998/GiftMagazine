@@ -13,23 +13,23 @@ const WhyUsHome = (props) => {
         {
             icon: <LocalShippingIcon fontSize="large"/>,
             title: 'Fast Delivery',
-            message: 'dshcvhvhd',
+            message: 'We provide fast and free delivery on millions of items.',
             type: 'icon'
         },
         {
             icon: 'Free-delivery-vector-royalty-free-PNG.png',
             title: 'Free Shiping',
-            message: 'dshcvhvhd'
+            message: 'We provide discounts on a variety of additional shipping options.'
         },
         {
             icon: <LocalGroceryStoreIcon fontSize="large"/>,
             title: 'Best Quality',
-            message: 'dshcvhvhd',
+            message: 'We provide best quality products at low price',
             type: 'icon'
         }
     ];
     return (
-        <Grid container="true" alignItems="center" justifyContent="center">
+        <Grid container="true" alignItems="center" justifyContent="center" className={classes.root}>
             <Typography variant="h4" className={classes.heading}>WHY SHOP WITH US</Typography>
             <Grid container="true" alignItems="center" justifyContent="space-between">
                 {
@@ -46,6 +46,9 @@ const WhyUsHome = (props) => {
 export default WhyUsHome;
 
 const useStyles = makeStyles((theme) => ({
+    root: {
+        margin: '3rem 0rem'
+    },
     heading: {
         fontFamily: 'Montserrat',
         fontWeight: 'bold',

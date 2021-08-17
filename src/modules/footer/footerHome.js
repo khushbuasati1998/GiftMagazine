@@ -42,11 +42,19 @@ const FooterHome = (props) => {
                 className={classes.socialIcon}
                 spacing={3}
             >
-                <Grid item={true} xs={12} sm={6} md={3} lg={3} className={classes.box}>
-                    <Typography variant="h6" className={classes.title}>ABOUT US</Typography>
-                    {/* <Typography variant="body1"></Typography> */}
+                <Grid item={true} xs={12} sm={6} md={2} lg={2} className={classes.box}>
+                    <Typography variant="h6" className={classes.title}>Extras</Typography>
+                    <Button className={classes.buttonColor}>Brands</Button><br />
+                    <Button className={classes.buttonColor}>Gift Certificates</Button><br />
+                    <Button className={classes.buttonColor}>Site Map</Button>
                 </Grid>
-                <Grid item={true} xs={12} sm={6} md={3} lg={3} className={classes.box}>
+                <Grid item={true} xs={12} sm={6} md={2} lg={2} className={classes.box}>
+                    <Typography variant="h6" className={classes.title}>Information</Typography>
+                    <Button className={classes.buttonColor}>About Us</Button><br />
+                    <Button className={classes.buttonColor}>Privacy Policy</Button><br />
+                    <Button className={classes.buttonColor}>Terms & Conditions</Button>
+                </Grid>
+                <Grid item={true} xs={12} sm={6} md={2} lg={2} className={classes.box}>
                     <Typography variant="h6" className={classes.title}>Newsletter</Typography>
                     <OutlinedInput
                         value={email}
@@ -63,16 +71,20 @@ const FooterHome = (props) => {
                         SUBSCRIBE
                     </Button>
                 </Grid>
-                <Grid item={true} xs={12} sm={6} md={3} lg={3} className={classes.box}>
-                    <Typography variant="h6" className={classes.title}>NEED HELP</Typography>
-                    {/* <Typography variant="body1"></Typography> */}
+                <Grid item={true} xs={12} sm={6} md={2} lg={2} className={classes.box}>
+                    <Typography variant="h6" className={classes.title}>My Account</Typography>
+                    <Button className={classes.buttonColor}>My Account</Button><br />
+                    <Button className={classes.buttonColor}>Order History</Button><br />
+                    <Button className={classes.buttonColor}>Wish List</Button><br />
+                    <Button className={classes.buttonColor}>Returns</Button><br />
                 </Grid>
-                <Grid item={true} xs={12} sm={6} md={3} lg={3} className={classes.box}>
+                <Grid item={true} xs={12} sm={6} md={2} lg={2} className={classes.box}>
                     <Typography variant="h6" className={classes.title}>CONTACT US</Typography>
                     <Typography className={classes.signalLine}>
                         <LocationOnIcon className={classes.contactIcon} />
-                        Gandhi Square, Amgaon, 441902, Dist: Gondia
+                        Gb road 123 london Uk
                     </Typography>
+                    <br />
                     <Typography className={classes.signalLine}>
                         <PhoneIcon className={classes.contactIcon} /> +91 9876543210
                     </Typography>
@@ -91,7 +103,6 @@ const useStyles = makeStyles((theme) => ({
         position: 'relative',
         backgroundColor: '#2d2d2d',
         color: '#ffffff',
-        // margin: '0 45px 45px',
         padding: '0rem 1rem 2rem 1rem'
     },
     socialIcon: {
@@ -109,7 +120,8 @@ const useStyles = makeStyles((theme) => ({
     },
     title: {
         fontWeight: 'bold',
-        marginBottom: 11
+        marginBottom: 11,
+        textTransform: 'uppercase'
     },
     contactIcon: {
         marginRight: 8
@@ -124,5 +136,8 @@ const useStyles = makeStyles((theme) => ({
         color: colors.white,
         marginTop: 12,
         borderRadius: 0
+    },
+    buttonColor: {
+        color: colors.white,
     }
 }));
